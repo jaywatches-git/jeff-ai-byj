@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --jeff-bg: #020B14;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--jeff-bg);
+  color: #e2e8f0;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #020B14;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Neon glow utility classes */
+.neon-blue { text-shadow: 0 0 10px #0033FF, 0 0 20px #0033FF; }
+.neon-gold { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; }
+.neon-cyan { text-shadow: 0 0 10px #00BFFF, 0 0 20px #00BFFF; }
+
+/* Panel card hover state */
+.panel-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.panel-card:hover {
+  transform: scale(1.015);
+}
+
+/* Chat bubble styles */
+.chat-user {
+  background: rgba(0, 51, 255, 0.2);
+  border: 1px solid rgba(0, 51, 255, 0.4);
+}
+.chat-assistant {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Micro-task ticker */
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.ticker-text {
+  animation: ticker-scroll 12s linear infinite;
+  white-space: nowrap;
+}
+
+/* Matrix rain canvas */
+.matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
